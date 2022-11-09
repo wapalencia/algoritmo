@@ -1,3 +1,3 @@
-module https://github.com/wapalencia/algoritmo
+module github.com/wapalencia/algoritmo
 
 go 1.18
