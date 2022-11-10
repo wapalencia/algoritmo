@@ -1,6 +1,6 @@
 package internal
 
-func EncontrarPalabra(data []string) string {
+func Exercise_3(data []string) string {
 
 	response := ""
 	for _, item := range data {
@@ -19,17 +19,4 @@ func isNumber(num string) bool {
 		}
 	}
 	return false
-}
-
-
-
-func EncontrarPalabra1(data []string) string {
-
-	response := ""
-	for _, item := range data {
-		if !isNumber(item) {
-			response += item
-		}
-	}
-	return response
 }

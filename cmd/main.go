@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/wapalencia/algoritmo/internal/"
+	"github.com/wapalencia/algoritmo/internal"
+	
 )
 
 func main() {
@@ -13,4 +14,7 @@ func main() {
 	internal.ValidarPar(values)
 	fmt.Println(internal.RecorrerPares(-5, 6, 2))
 	fmt.Println(internal.EncontrarPalabra(LeerArray))
+	fmt.Println(internal.EncontrarPalabra1(LeerArray))
+
+
 }
