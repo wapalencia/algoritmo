@@ -4,12 +4,16 @@ import (
 	//"fmt"
 	//"strings"
 
+	"fmt"
+
 	"github.com/wapalencia/algoritmo/internal"
 )
 
 func main() {
 
-	var values = []string{"a", "a", "c", "c", "s", "x", "x", "x", "x"}
+	var values = []string{"a", "a", "c", "c", "s", "x", "l", "x", "L"}
+	var values2 = []string{" ", " ", " ", "c", "s", "", "", "x", "L"}
+
 	/*var LeerArray = []string{"1", "m", "u", "y", "-", "f", "a", "c", "i", "l", "9", "0"}
 	internal.ValidarPar(values)
 	fmt.Println(internal.RecorrerPares(-5, 6, 2))
@@ -19,6 +23,8 @@ func main() {
 	ss := "hola"
 	fmt.Println(strings.Contains(ss, "o"))
 	fmt.Println(strings.Count(ss, "o"))*/
-	internal.ReadSTR(values)
+	fmt.Println(internal.IsPalindrome("ana"))
+	fmt.Println(internal.ReadArrya(values))
+	fmt.Println(internal.ReadArrya(values2))
 
 }
