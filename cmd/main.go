@@ -13,6 +13,7 @@ func main() {
 
 	var values = []string{"a", "a", "c", "c", "s", "x", "l", "x", "L"}
 	var values2 = []string{" ", " ", " ", "c", "s", "", "", "x", "L"}
+	var values3 = []string{"1", "1", "1", "c", "s", "", "1", "x", "L"}
 
 	/*var LeerArray = []string{"1", "m", "u", "y", "-", "f", "a", "c", "i", "l", "9", "0"}
 	internal.ValidarPar(values)
@@ -23,8 +24,10 @@ func main() {
 	ss := "hola"
 	fmt.Println(strings.Contains(ss, "o"))
 	fmt.Println(strings.Count(ss, "o"))*/
+	
 	fmt.Println(internal.IsPalindrome("ana"))
-	fmt.Println(internal.ReadArrya(values))
-	fmt.Println(internal.ReadArrya(values2))
+	fmt.Println(internal.ReadArry(values))
+	fmt.Println(internal.ReadArry(values2))
+	fmt.Println(internal.ReadArry(values3))
 
 }

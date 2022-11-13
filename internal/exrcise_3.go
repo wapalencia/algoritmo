@@ -1,9 +1,12 @@
 package internal
 
 import (
-	"fmt"
-	//"strings"
+
+	//"fmt"
+	"strings"
 )
+
+//"fmt"
 
 func EncontrarPalabra(data []string) string {
 
@@ -41,39 +44,77 @@ func IsPalindrome(w string) bool {
 	return true
 }
 
-func ReadSTR(str []string) {
-	numList := make([]string, 1)
-	numList2 := make([][]string, 1)
-	var xred string
+func GetChar(str []string, iterado int) []string {
+	var xcad string
+	var result []string
 
+	c := make([]string, 0)
+	numList := str
+	//l:=len(numList[len(str)])
+
+	for _, x := range numList {
+
+		if x == numList[iterado] {
+			xcad += x
+		}
+	}
+	//fmt.Println(len(xcad))
+	if len(xcad) > 1 {
+		c = append(c, xcad)
+	}
+
+	result = c
+
+	return result
+
+}
+
+func ReadArry(r []string) [][]string {
+	var xletrep string
+	cont := 0
+	nList := r
+	c := make([]string, 0)
+	c2 := make([][]string, 0)
+	//fmt.Println(c)
 	i := 0
+	for _, x := range nList {
 
-	for _, x := range str {
+		i++
+		if !strings.Contains(xletrep, x) {
+			xletrep += x
+			if !isCharcad(c, x, xletrep) {
+				cont++
 
-		//fmt.Println(x)
+				c2 = append(c2, GetChar(nList, i-1))
 
-		/* 		if i > 0 || x == numList[i] {
-
-		   			numList[i] = xred
-		   			//fmt.Println(numList[i] )
-		   		}
-		   		xred = "" */
-
-		numList[i] = x
-		fmt.Println(numList[i])
-
-		for _, leninterno := range str {
-			xred += x
-			if x == leninterno {
-				numList = append(numList, xred)
 			}
-
 		}
 
-		numList2 = append(numList2, numList)
+	}
+
+	return c2
+}
+func isCharcad(xr []string, srt string, letrep string) bool {
+	numList := xr
+
+	for _, x := range numList {
+
+		if x == srt {
+			return true
+		}
 
 	}
-	//fmt.Println(xred)
-	fmt.Println(numList2)
 
+	return false
+}
+func IntArrayEquals(a []string, b []string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i, v := range a {
+		if v != b[i] {
+			return false
+		}
+	}
+	return true
 }
