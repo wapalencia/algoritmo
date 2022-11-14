@@ -3,6 +3,7 @@ package internal
 import (
 
 	//"fmt"
+	"fmt"
 	"strings"
 )
 
@@ -21,6 +22,7 @@ func EncontrarPalabra(data []string) string {
 
 func isNumber(num string) bool {
 	numList := []string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}
+
 	for _, x := range numList {
 		if x == num {
 			return true
@@ -82,7 +84,7 @@ func ReadArry(r []string) [][]string {
 		i++
 		if !strings.Contains(xletrep, x) {
 			xletrep += x
-			if !isCharcad(c, x, xletrep) {
+			if !isCharcad(c, x) {
 				cont++
 
 				c2 = append(c2, GetChar(nList, i-1))
@@ -94,7 +96,7 @@ func ReadArry(r []string) [][]string {
 
 	return c2
 }
-func isCharcad(xr []string, srt string, letrep string) bool {
+func isCharcad(xr []string, srt string) bool {
 	numList := xr
 
 	for _, x := range numList {
@@ -107,14 +109,74 @@ func isCharcad(xr []string, srt string, letrep string) bool {
 
 	return false
 }
-func IntArrayEquals(a []string, b []string) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	for i, v := range a {
-		if v != b[i] {
-			return false
+func CreateSeed(seed []string, peso []string) int {
+
+	var resultPeso string
+	var resultSeed string
+	var posi int
+	var countSeed int
+	var totalSeed int
+
+	for _, s := range seed {
+
+		if s == "a" {
+			resultSeed += s
+			fmt.Println("Semillas ...", s)
 		}
 	}
-	return true
+
+	fmt.Println("total Semillas ...En SEMILLAS", len(resultSeed))
+	countSeed += len(resultSeed)
+	i := -1
+	for _, p := range peso {
+		i++
+		fmt.Println("peso ...", i, "posicion", p)
+		if p == "a" {
+			resultPeso += p
+
+			posi = i
+
+		}
+	}
+	///SABER QUE METODO USAR
+	if len(resultPeso) != 0 {
+
+		switch resultSeed {
+		case "":
+			fmt.Println("resultado semilla ", resultSeed, "  is my favorite!")
+
+			countSeed = 0
+			totalSeed = countSeed
+
+		case "a":
+			fmt.Println("resultado semilla ", resultSeed, "  is my favorite!")
+
+			countSeed = 1
+			totalSeed = (countSeed) + (countSeed)
+		case "aa":
+
+			fmt.Println("resultado semilla ", resultSeed, "is great!")
+
+			countSeed = len(resultPeso) + len(resultSeed)
+			totalSeed = (posi + countSeed + posi) + (posi * countSeed * posi)
+
+		default:
+			fmt.Println("I've never tried", resultSeed, "before")
+			countSeed = len(resultPeso) + len(resultSeed)
+			totalSeed = (posi + countSeed + posi) + (posi * countSeed * posi)
+		}
+
+	} else {
+		fmt.Println("total   resultPeso ", resultPeso)
+		countSeed = len(resultPeso) + len(resultSeed)
+		totalSeed = countSeed
+	}
+
+	fmt.Println("total Semillas ...En pESO", len(resultPeso))
+	fmt.Println("Posicion PESO ...", posi)
+	fmt.Println("toal semilla y peso", countSeed)
+
+	fmt.Println("(", posi, "+", countSeed, "+", posi, ") + (", posi, "*", countSeed, "*", posi, ")")
+
+	return totalSeed
 }
